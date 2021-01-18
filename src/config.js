@@ -1,4 +1,4 @@
-const CONTRACT_NAME = process.env.CONTRACT_NAME ||'neardapp.testnet'
+const CONTRACT_NAME = process.env.CONTRACT_NAME ||'zeggotest.testnet'
 
 function getConfig(env) {
   switch (env) {
