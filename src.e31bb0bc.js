@@ -50868,7 +50868,7 @@ exports.keyStores = __importStar(require("./key_stores/browser-index"));
 __exportStar(require("./common-index"), exports);
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js"}],"config.js":[function(require,module,exports) {
-const CONTRACT_NAME = "dev-1610994295833-5962200" || 'neardapp.testnet';
+const CONTRACT_NAME = "dev-1610994295833-5962200" || 'zeggotest.testnet';
 
 function getConfig(env) {
   switch (env) {
@@ -85340,11 +85340,11 @@ function App() {
       style: {
         textAlign: 'center'
       }
-    }, /*#__PURE__*/_react.default.createElement("h1", null, "Let's see what happens!"), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    }, /*#__PURE__*/_react.default.createElement("h1", null, "Xeggo"), /*#__PURE__*/_react.default.createElement("h1", null, "One stop solution for your recurring payment"), /*#__PURE__*/_react.default.createElement(_Button.default, {
       variant: "contained",
       color: "secondary",
       onClick: _utils.login
-    }, "Sign in"));
+    }, "Xeggo"));
   }
 
   return (
@@ -85354,11 +85354,11 @@ function App() {
       className: classes.menu
     }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
       to: "/"
-    }, "Home")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    }, "Dashboard")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
       to: "/new"
-    }, "Create event")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    }, "Stream Money")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
       to: "/me"
-    }, "My events")), /*#__PURE__*/_react.default.createElement("li", null, window.accountId, /*#__PURE__*/_react.default.createElement(_Button.default, {
+    }, "Past Stream")), /*#__PURE__*/_react.default.createElement("li", null, window.accountId, /*#__PURE__*/_react.default.createElement(_Button.default, {
       className: "link",
       style: {
         color: '#C51162'
@@ -85442,7 +85442,7 @@ const NewEvent = props => {
   }, /*#__PURE__*/_react.default.createElement(_InputLabel.default, {
     className: classes.label,
     htmlFor: "title"
-  }, "Whats the name of your events?"), /*#__PURE__*/_react.default.createElement(_Input.default, {
+  }, "Enter the name of the event for which you want to stream money"), /*#__PURE__*/_react.default.createElement(_Input.default, {
     style: {
       width: '100%'
     },
@@ -85468,7 +85468,7 @@ const NewEvent = props => {
   }, /*#__PURE__*/_react.default.createElement(_InputLabel.default, {
     className: classes.label,
     htmlFor: "seats"
-  }, "Max seats"), /*#__PURE__*/_react.default.createElement(_Input.default, {
+  }, "No. of stream time"), /*#__PURE__*/_react.default.createElement(_Input.default, {
     type: "number",
     onChange: e => setMaxSeats(e.target.value),
     id: "seats",
@@ -85478,12 +85478,12 @@ const NewEvent = props => {
       color: '#999'
     },
     id: "symbol-helper-text"
-  }, "The maximum allowed number of entries")), /*#__PURE__*/_react.default.createElement(_FormControl.default, {
+  }, "The maximum allowed number of stream with price in near token")), /*#__PURE__*/_react.default.createElement(_FormControl.default, {
     className: classes.field
   }, /*#__PURE__*/_react.default.createElement(_InputLabel.default, {
     className: classes.label,
     htmlFor: "seatPrice"
-  }, "Price per seat"), /*#__PURE__*/_react.default.createElement(_Input.default, {
+  }, "Price per Stream"), /*#__PURE__*/_react.default.createElement(_Input.default, {
     type: "number",
     onChange: e => setSeatPrice(e.target.value),
     id: "seatsPrice",
@@ -85500,7 +85500,7 @@ const NewEvent = props => {
       color: '#999'
     },
     id: "symbol-helper-text"
-  }, "Starting date")), /*#__PURE__*/_react.default.createElement(_FormControl.default, {
+  }, "Starting date (MM/DD/YYYY)")), /*#__PURE__*/_react.default.createElement(_FormControl.default, {
     className: classes.field
   }, /*#__PURE__*/_react.default.createElement(_Input.default, {
     type: "datetime-local",
@@ -85516,7 +85516,7 @@ const NewEvent = props => {
     onClick: createEvent,
     variant: "contained",
     color: "secondary"
-  }, "Create Event"))));
+  }, "Stream Money in Near Token"))));
 };
 
 const EventDetail = props => {
@@ -85623,20 +85623,20 @@ const EventCard = props => {
     onClick: purchase,
     variant: "contained",
     color: "secondary"
-  }, "Purchase by ", (0, _utils.parseNearAmount)(event.seatPrice), " NEAR") : /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }, "Stream money  ", (0, _utils.parseNearAmount)(event.seatPrice), " NEAR") : /*#__PURE__*/_react.default.createElement(_Button.default, {
     onClick: transfer,
     variant: "contained",
     color: "secondary"
-  }, "Transfer")), showTickets ? /*#__PURE__*/_react.default.createElement(_TableContainer.default, {
+  }, " Direct Transfer")), showTickets ? /*#__PURE__*/_react.default.createElement(_TableContainer.default, {
     component: _Paper.default
   }, /*#__PURE__*/_react.default.createElement(_Table.default, {
     className: classes.table,
     "aria-label": "simple table"
   }, /*#__PURE__*/_react.default.createElement(_TableHead.default, null, /*#__PURE__*/_react.default.createElement(_TableRow.default, null, /*#__PURE__*/_react.default.createElement(_TableCell.default, {
     align: "right"
-  }, "Attendee"), /*#__PURE__*/_react.default.createElement(_TableCell.default, {
+  }, "Stream people"), /*#__PURE__*/_react.default.createElement(_TableCell.default, {
     align: "right"
-  }, "Purchased At"), /*#__PURE__*/_react.default.createElement(_TableCell.default, {
+  }, "Stream At"), /*#__PURE__*/_react.default.createElement(_TableCell.default, {
     align: "right"
   }, "Check in"))), /*#__PURE__*/_react.default.createElement(_TableBody.default, null, tickets.map((row, index) => /*#__PURE__*/_react.default.createElement(_TableRow.default, {
     key: index
@@ -85715,7 +85715,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36251" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43895" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
