@@ -1,7 +1,7 @@
-Tiki
+Xeggo
 ==================
 
-DEMO: https://www.loom.com/share/fc8f330be783421ab8578457360c9471
+
 
 Quick Start
 ===========
@@ -55,7 +55,7 @@ Step 2: set contract name in code
 
 Modify the line in `src/config.js` that sets the account name of the contract. Set it to the account id you used above.
 
-    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'tiki.YOUR-NAME.testnet'
+    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'YOUR-NAME.testnet'
 
 
 Step 3: deploy!
