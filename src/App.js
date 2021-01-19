@@ -109,8 +109,9 @@ export default function App() {
   if (!window.walletConnection.isSignedIn()) {
     return (
       <main style={{textAlign: 'center'}}>
-        <h1>Let's see what happens!</h1>
-        <Button variant="contained" color="secondary" onClick={login}>Sign in</Button>
+      <h1>Xeggo</h1>
+        <h1>One stop solution for your recurring payment</h1>
+        <Button variant="contained" color="secondary" onClick={login}>Xeggo</Button>
       </main>
     )
   }
@@ -122,13 +123,13 @@ export default function App() {
         <nav>
           <ul className={classes.menu}>
             <li>
-              <Link to="/"  >Home</Link>
+              <Link to="/"  >Dashboard</Link>
             </li>
             <li>
-              <Link to="/new">Create event</Link>
+              <Link to="/new">Stream Money</Link>
             </li>
             <li>
-              <Link to="/me">My events</Link>
+              <Link to="/me">Past Stream</Link>
             </li>
             <li>
               {window.accountId}
@@ -204,7 +205,7 @@ const NewEvent = (props) => {
     <form action="">
 
         <FormControl style={{display: 'block'}} className={classes.field}>
-          <InputLabel className={classes.label} htmlFor="title">Whats the name of your events?</InputLabel>
+          <InputLabel className={classes.label} htmlFor="title">Enter the name of the event for which you want to stream money</InputLabel>
           <Input style={{width: '100%'}} onChange={(e)  =>  setTitle(e.target.value)} id="title" aria-describedby="Event title" />
         </FormControl>
         <FormControl className={classes.field}>
@@ -215,12 +216,12 @@ const NewEvent = (props) => {
 
       <div>
         <FormControl className={classes.field}>
-          <InputLabel className={classes.label} htmlFor="seats">Max seats</InputLabel>
+          <InputLabel className={classes.label} htmlFor="seats">No. of stream time</InputLabel>
           <Input type="number" onChange={(e)  => setMaxSeats(e.target.value)} id="seats" aria-describedby="Max seats for this event" />
-          <FormHelperText style={{color: '#999'}} id="symbol-helper-text">The maximum allowed number of entries</FormHelperText>
+          <FormHelperText style={{color: '#999'}} id="symbol-helper-text">The maximum allowed number of stream with price in near token</FormHelperText>
         </FormControl>
         <FormControl className={classes.field}>
-          <InputLabel className={classes.label} htmlFor="seatPrice">Price per seat</InputLabel>
+          <InputLabel className={classes.label} htmlFor="seatPrice">Price per Stream</InputLabel>
           <Input type="number" onChange={ (e) => setSeatPrice(e.target.value)} id="seatsPrice" aria-describedby="The price per seat" />
         </FormControl>
       </div>
@@ -228,7 +229,7 @@ const NewEvent = (props) => {
       <div>
         <FormControl className={classes.field}>
           <Input type="datetime-local" onChange={(e) => setStartDate(e.target.value)} id="start" aria-describedby="Event starting date" />
-          <FormHelperText style={{color: '#999'}} id="symbol-helper-text">Starting date</FormHelperText>
+          <FormHelperText style={{color: '#999'}} id="symbol-helper-text">Starting date (MM/DD/YYYY)</FormHelperText>
         </FormControl>
         <FormControl className={classes.field}>
           <Input type="datetime-local" onChange={ (e) => setEndDate(e.target.value)} id="end" aria-describedby="Event ending date" />
@@ -236,7 +237,7 @@ const NewEvent = (props) => {
         </FormControl>
       </div>
 
-      <Button onClick={createEvent} variant="contained" color="secondary">Create Event</Button>
+      <Button onClick={createEvent} variant="contained" color="secondary">Stream Money in Near Token</Button>
     </form>
     </Paper>
   </Container>
@@ -337,8 +338,8 @@ const EventCard = (props) => {
         <></>
       }
       { myEvents.indexOf(event.id) == -1 ?
-        <Button onClick={purchase} variant="contained" color="secondary">Purchase by {parseNearAmount(event.seatPrice)} NEAR</Button> :
-        <Button onClick={transfer} variant="contained" color="secondary">Transfer</Button>
+        <Button onClick={purchase} variant="contained" color="secondary">Stream money  {parseNearAmount(event.seatPrice)} NEAR</Button> :
+        <Button onClick={transfer} variant="contained" color="secondary"> Direct Transfer</Button>
       }
 
 
@@ -349,8 +350,8 @@ const EventCard = (props) => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="right">Attendee</TableCell>
-            <TableCell align="right">Purchased At</TableCell>
+            <TableCell align="right">Stream people</TableCell>
+            <TableCell align="right">Stream At</TableCell>
             <TableCell align="right">Check in</TableCell>
           </TableRow>
         </TableHead>
