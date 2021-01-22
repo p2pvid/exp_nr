@@ -50908,17 +50908,6 @@ const CONTRACT_NAME = "dev-1610994295833-5962200" || 'neardapp.testnet';
 
 function getConfig(env) {
   switch (env) {
-    case 'production':
-    case 'mainnet':
-      return {
-        networkId: 'mainnet',
-        nodeUrl: 'https://rpc.mainnet.near.org',
-        contractName: CONTRACT_NAME,
-        walletUrl: 'https://wallet.near.org',
-        helperUrl: 'https://helper.mainnet.near.org',
-        explorerUrl: 'https://explorer.mainnet.near.org'
-      };
-
     case 'development':
     case 'testnet':
       return {
@@ -85229,7 +85218,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33427" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32847" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
